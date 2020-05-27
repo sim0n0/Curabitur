@@ -40,7 +40,12 @@ public class CurabiturServer {
             }
         };
         System.out.println("CurabiturServer a ouvert et écoute le port "+port);
-
+	
+	while(true)
+	{
+		// Ajout client
+		Socket client = server.accept();	
+	}
     }
 
     public static void main(String[] args) throws IOException
