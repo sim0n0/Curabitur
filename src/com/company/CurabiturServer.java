@@ -1,7 +1,12 @@
 
 
+
+
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Classe du serveur
@@ -40,12 +45,12 @@ public class CurabiturServer {
             }
         };
         System.out.println("CurabiturServer a ouvert et écoute le port "+port);
-	
-	while(true)
-	{
-		// Ajout client
-		Socket client = server.accept();	
-	}
+
+        while(true)
+        {
+            // Ajout client
+            Socket client = server.accept();
+        }
     }
 
     public static void main(String[] args) throws IOException
