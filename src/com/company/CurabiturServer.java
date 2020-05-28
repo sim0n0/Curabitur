@@ -1,7 +1,7 @@
 
 
 
-
+import java.lang.System;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -39,12 +39,22 @@ public class CurabiturServer {
      * @throws IOException
      */
     public void run() throws IOException {
+	try {
+		server = new ServerSocket(port);
+		System.out.println("fef");
+	} catch (IOException e) {
+		System.out.println("Erreur à la création :\n"+ e);	
+		server.close();
+	}
+	System.out.println("CurabiturServer a ouvert et écoute le port "+port);
+/*
         server = new ServerSocket(port) {
             protected void finalize() throws IOException {
                 this.close();
             }
         };
-        System.out.println("CurabiturServer a ouvert et écoute le port "+port);
+*/
+        
 
         while(true)
         {
@@ -55,7 +65,7 @@ public class CurabiturServer {
 
     public static void main(String[] args) throws IOException
     {
-        new CurabiturServer(12345).run();
+        new CurabiturServer(80).run();
     }
 
 
