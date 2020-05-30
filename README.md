@@ -6,4 +6,4 @@
 
 
 
-> Les membres de se projet sont : ELOIFI Badr, NASSIM Lara, PIAT Thibault, LE BAS Clément, et Delisle Simon
+> Les membres de se projet sont : ELOIFI Badr, NASSIM Lara, PIAT Thibault, LE BAS Clément, Delisle Simon, Belhadj Charf-Eddin, SHANTHIRABALAN Aravinth
