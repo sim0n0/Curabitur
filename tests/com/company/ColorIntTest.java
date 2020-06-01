@@ -22,7 +22,7 @@ public class ColorIntTest {
 
 	@Test
 	public void testGetColor() {
-		assertEquals("#3079ab", c.getColor(1));
+		assertEquals("#e15258", c.getCouleur(1));
 	}
 
 }

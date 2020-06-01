@@ -1,6 +1,6 @@
 package com.company;
 
-import java.awt.couleur;
+import java.awt.Color;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -24,7 +24,7 @@ public class Utilisateur {
         this.client = client;
         this.pseudo = name;
         this.UtilisateurId = nbUtilisateur;
-        this.couleur = couleurInt.getcouleur(this.UtilisateurId);
+        this.couleur = ColorInt.getCouleur(this.UtilisateurId);
         nbUtilisateur += 1;
     }
 
@@ -34,7 +34,7 @@ public class Utilisateur {
         Pattern couleurPattern = Pattern.compile("#([0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})");
         Matcher m = couleurPattern.matcher(hexcouleur);
         if (m.matches()){
-            couleur c = couleur.decode(hexcouleur);
+            Color c = Color.decode(hexcouleur);
             // if the couleur is too Bright don't change
             double luma = 0.2126 * c.getRed() + 0.7152 * c.getGreen() + 0.0722 * c.getBlue(); // per ITU-R BT.709
             if (luma > 160) {

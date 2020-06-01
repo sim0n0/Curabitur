@@ -50,7 +50,7 @@ public class GestionUtilisateur implements Runnable {
 
                 // Gestion du changement
             }else if (message.charAt(0) == '#'){
-                user.changeColor(message);
+                user.changecouleur(message);
                 // update color for all other users
                 this.server.broadcastAllUsers();
             }else{

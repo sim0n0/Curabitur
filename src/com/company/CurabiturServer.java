@@ -65,7 +65,7 @@ public class CurabiturServer {
             String results=" ";
             for(int i =0; i < clients.size(); i++)
             {
-                results+=clients.get(i).getNickname();
+                results+=clients.get(i).getpseudo();
                 results+="\n";
             }
             System.out.println("Voici la liste des personnes connectés au serveur : \n" );
@@ -99,7 +99,7 @@ public class CurabiturServer {
             Utilisateur newUser = new Utilisateur(client, nickname);
             this.clients.add(newUser);
 
-            new Thread(new UserHandler(this, newUser)).start();
+            new Thread(new GestionUtilisateur(this, newUser)).start();
         }
     }
 
@@ -122,7 +122,7 @@ public class CurabiturServer {
     public void sendMessageToUser(String msg, Utilisateur userSender, String user){
         boolean find = false;
         for (Utilisateur client : this.clients) {
-            if (client.getNickname().equals(user) && client != userSender) {
+            if (client.getpseudo().equals(user) && client != userSender) {
                 find = true;
                 userSender.getOutStream().println(userSender.toString() + " -> " + client.toString() +": " + msg);
                 client.getOutStream().println(
