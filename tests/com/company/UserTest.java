@@ -11,15 +11,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class UserTest {
-	private User u;
+	private Utilisateur u;
 	private String color;
 	private ServerSocket server;
 	Socket clientSocket;
-	private List<User> clients;
+	private List<Utilisateur> clients;
 	
 	@Before
 	public void setUp() throws Exception {
-		u = new User(clientSocket, "Nom");
+		u = new Utilisateur(clientSocket, "Nom");
 	}
 
 	@After
@@ -28,7 +28,7 @@ public class UserTest {
 
 	@Test
 	public void testChangeColor() {
-		u.changeColor("#3079ab");
+		u.changecouleur("#3079ab");
 	}
 
 }

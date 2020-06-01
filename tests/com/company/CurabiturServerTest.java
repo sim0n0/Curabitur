@@ -12,18 +12,18 @@ import org.junit.Test;
 
 public class CurabiturServerTest {
 	private static int port= 4444;
-	protected User u;
+	protected Utilisateur u;
 	private ServerSocket server;
 	Socket clientSocket;
-	private List<User> clients;
+	private List<Utilisateur> clients;
 
 	
 	@Before
 	public void setUp() throws Exception {
 		server = new ServerSocket(port);
 		clientSocket = server.accept();
-		u = new User(clientSocket, "Nom");
-		clients = new ArrayList<User>();
+		u = new Utilisateur(clientSocket, "Nom");
+		clients = new ArrayList<Utilisateur>();
 		
 	}
 
