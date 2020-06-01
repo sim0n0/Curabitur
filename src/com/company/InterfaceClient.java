@@ -313,6 +313,4 @@ public class InterfaceClient extends Thread{
 	public static void main(String[] args) throws Exception {
 		InterfaceClient client = new InterfaceClient();
 	}
-
-
 }
