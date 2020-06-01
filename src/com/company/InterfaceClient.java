@@ -34,7 +34,7 @@ public class InterfaceClient extends Thread{
 
 	public InterfaceClient() {
 		this.serverName = "localhost";
-		this.PORT = 12345;
+		this.PORT = 4444;
 		this.name = "Nom";
 
 		String policecCaractere = "Times";
@@ -171,9 +171,9 @@ public class InterfaceClient extends Thread{
 				"	/>"
 				+ "<h4 style=\"color:#178fa5\">Quelques infos utiles :</h4>"
 				+"<ul>"
-				+"<p style=\"color:#178fa5\"; align=\"center\"><b>@nomUtilisateur</b> : cela permet d'envoyer un messager à votre correcpondant.</p></marquee>"
-				+"<p style=\"color:#8b17a5\"; align=\"center\"><b>:)</b> Des émojis sont pré-existants</p>"
-				+"<p style=\"color:#33a517\"; align=\"center\"><b>la flèche du haut </b> permet de repondre au dernier message.</p>"
+				+"<p style=\"color:#178fa5\"; align=\"center\"><b>@nomUtilisateur</b> : cela permet d'envoyer un messager ï¿½ votre correcpondant.</p></marquee>"
+				+"<p style=\"color:#8b17a5\"; align=\"center\"><b>:)</b> Des ï¿½mojis sont prï¿½-existants</p>"
+				+"<p style=\"color:#33a517\"; align=\"center\"><b>la flï¿½che du haut </b> permet de repondre au dernier message.</p>"
 				+"</ul><br/>"
 				+ "");
 
@@ -189,7 +189,7 @@ public class InterfaceClient extends Thread{
 					affichageInformationuTilisateur(blocDiscussion, "<span>Connexion au serveur : " + serverName + " sur le port " + PORT + ".</span>");
 					server = new Socket(serverName, PORT);
 
-					affichageInformationuTilisateur(blocDiscussion, "<span>Vous êtes connectés à " +
+					affichageInformationuTilisateur(blocDiscussion, "<span>Vous ï¿½tes connectï¿½s ï¿½ " +
 							server.getRemoteSocketAddress()+"</span>");
 
 					input = new BufferedReader(new InputStreamReader(server.getInputStream()));
@@ -238,7 +238,7 @@ public class InterfaceClient extends Thread{
 				blocDiscussion.setBackground(Color.LIGHT_GRAY);
 				listeUtilisateurs.setBackground(Color.LIGHT_GRAY);
 
-				affichageInformationuTilisateur(blocDiscussion, "<span>Vous êtes déconnectés</span>");
+				affichageInformationuTilisateur(blocDiscussion, "<span>Vous ï¿½tes dï¿½connectï¿½s</span>");
 				output.close();
 			}
 		});
