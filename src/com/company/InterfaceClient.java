@@ -1,3 +1,8 @@
+package com.company;
+
+import javax.swing.*;
+import javax.swing.text.html.HTMLDocument;
+import javax.swing.text.html.HTMLEditorKit;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,14 +11,14 @@ import java.awt.event.KeyEvent;
 import java.net.*;
 import java.io.*;
 import javax.swing.*;
-import javax.swing.text.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.text.html.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * @author NASSIM Lara _ DELISLE Simon
+ */
 
 public class InterfaceClient extends Thread{
 
@@ -43,12 +48,12 @@ public class InterfaceClient extends Thread{
 		//MISE EN PLACE DE L'APPLICATION
 		final JFrame nomApplication = new JFrame("CURABITUR");
 		nomApplication.getContentPane().setLayout(null);
-		nomApplication.setSize(1000, 800);
+		nomApplication.setSize(700, 500);
 		nomApplication.setResizable(false);
 		nomApplication.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// BLOC DE DISCUSSION 
-		blocDiscussion.setBackground(Color.LIGHT_GRAY);
+		blocDiscussion.setBackground(Color.DARK_GRAY);
 		blocDiscussion.setBounds(30, 30, 800, 350);
 		blocDiscussion.setFont(ecriture);
 		blocDiscussion.setMargin(new Insets(6, 6, 6, 6));
@@ -60,7 +65,7 @@ public class InterfaceClient extends Thread{
 		blocDiscussion.putClientProperty(JEditorPane.HONOR_DISPLAY_PROPERTIES, true);
 
 		// LISTE DES UTILSATEURS
-		listeUtilisateurs.setBackground(Color.LIGHT_GRAY);
+		listeUtilisateurs.setBackground(Color.DARK_GRAY);
 		listeUtilisateurs.setBounds(520, 25, 156, 320);
 		listeUtilisateurs.setEditable(true);
 		listeUtilisateurs.setFont(ecriture);
@@ -75,9 +80,10 @@ public class InterfaceClient extends Thread{
 		// CREATION DU CHAMPS PERMETTANT D'ECRIRE LES MESSAGE
 		zoneCommunication.setBounds(0, 350, 400, 50);
 		zoneCommunication.setFont(ecriture);
+		zoneCommunication.setBackground(Color.DARK_GRAY);
 		zoneCommunication.setMargin(new Insets(6, 6, 6, 6));
 		final JScrollPane zoneChat = new JScrollPane(zoneCommunication);
-		zoneChat.setBounds(100, 350, 650, 50);
+		zoneChat.setBounds(10, 340, 670, 50);
 
 		/******************************************************************************************************************/
 		/******************************************************************************************************************/
@@ -88,12 +94,12 @@ public class InterfaceClient extends Thread{
 		/*  BOUTONS ENVOI */
 		final JButton boutonEnvoi = new JButton("Envoyer");
 		boutonEnvoi.setFont(ecriture);
-		boutonEnvoi.setBounds(550, 410, 100, 35);
+		boutonEnvoi.setBounds(575, 410, 100, 35);
 
 		/* BOUTON QUITTER */
 		final JButton jsbtndeco = new JButton("Quitter");
 		jsbtndeco.setFont(ecriture);
-		jsbtndeco.setBounds(25, 400, 130, 35);
+		jsbtndeco.setBounds(10, 400, 130, 35);
 
 
 		// ENVOI DE MESSAGE 
@@ -142,7 +148,7 @@ public class InterfaceClient extends Thread{
 		nomServer.setBounds(25, 380, 135, 40);
 
 		final JButton boutonConnexion = new JButton("CONNEXION");
-		boutonConnexion.setBounds(575, 380, 100, 40);
+		boutonConnexion.setBounds(545, 380, 150, 40);
 		boutonConnexion.setFont(ecriture);
 
 
@@ -164,16 +170,13 @@ public class InterfaceClient extends Thread{
 
 		/* INFORMATIONS VISIBLES */
 	
-		affichageInformationuTilisateur(blocDiscussion, "<img\n" + 
-				"	    src=\"clinoeil.jpg\" \n" + 
-				"	    height=\"300px\" \n" + 
-				"	    width=\"300px\" \n" + 
-				"	/>"
-				+ "<h4 style=\"color:#178fa5\">Quelques infos utiles :</h4>"
+		affichageInformationuTilisateur(blocDiscussion,
+
+				 "<h4 style=\"color:#178fa5\">Quelques infos utiles :</h4>"
 				+"<ul>"
-				+"<p style=\"color:#178fa5\"; align=\"center\"><b>@nomUtilisateur</b> : cela permet d'envoyer un messager � votre correcpondant.</p></marquee>"
-				+"<p style=\"color:#8b17a5\"; align=\"center\"><b>:)</b> Des �mojis sont pr�-existants</p>"
-				+"<p style=\"color:#33a517\"; align=\"center\"><b>la fl�che du haut </b> permet de repondre au dernier message.</p>"
+				+"<p style=\"color:#178fa5\"; align=\"center\"><b>@nomUtilisateur</b> : cela permet d'envoyer un messager a votre correcpondant.</p></marquee>"
+				+"<p style=\"color:#8b17a5\"; align=\"center\"><b>:)</b> Des emojis sont pre-existants</p>"
+				+"<p style=\"color:#33a517\"; align=\"center\"><b>la fleche du haut </b> permet de repondre au dernier message.</p>"
 				+"</ul><br/>"
 				+ "");
 
@@ -189,7 +192,7 @@ public class InterfaceClient extends Thread{
 					affichageInformationuTilisateur(blocDiscussion, "<span>Connexion au serveur : " + serverName + " sur le port " + PORT + ".</span>");
 					server = new Socket(serverName, PORT);
 
-					affichageInformationuTilisateur(blocDiscussion, "<span>Vous �tes connect�s � " +
+					affichageInformationuTilisateur(blocDiscussion, "<span>Vous etes connectes ! " +
 							server.getRemoteSocketAddress()+"</span>");
 
 					input = new BufferedReader(new InputStreamReader(server.getInputStream()));
@@ -210,8 +213,8 @@ public class InterfaceClient extends Thread{
 					nomApplication.add(jsbtndeco);
 					nomApplication.revalidate();
 					nomApplication.repaint();
-					blocDiscussion.setBackground(Color.BLACK);
-					listeUtilisateurs.setBackground(Color.GRAY);
+					blocDiscussion.setBackground(Color.DARK_GRAY);
+					listeUtilisateurs.setBackground(Color.DARK_GRAY);
 				} catch (Exception ex) {
 					affichageInformationuTilisateur(blocDiscussion, "<span>Impossible de se connecter au server</span>");
 					JOptionPane.showMessageDialog(nomApplication, ex.getMessage());
@@ -235,10 +238,10 @@ public class InterfaceClient extends Thread{
 				read.interrupt();
 
 				listeUtilisateurs.setText(null);
-				blocDiscussion.setBackground(Color.LIGHT_GRAY);
-				listeUtilisateurs.setBackground(Color.LIGHT_GRAY);
+				blocDiscussion.setBackground(Color.DARK_GRAY);
+				listeUtilisateurs.setBackground(Color.DARK_GRAY);
 
-				affichageInformationuTilisateur(blocDiscussion, "<span>Vous �tes d�connect�s</span>");
+				affichageInformationuTilisateur(blocDiscussion, "<span>Vous êtes déconnectés</span>");
 				output.close();
 			}
 		});
@@ -301,7 +304,7 @@ public class InterfaceClient extends Thread{
 	          }
 	        }
 	        catch (IOException ex) {
-	          System.err.println("Impossible danalyser le message entrant");
+	          System.err.println("Impossible d'analyser le message entrant");
 	        }
 	      }
 	    }

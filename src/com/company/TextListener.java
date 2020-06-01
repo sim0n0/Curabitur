@@ -1,29 +1,10 @@
-import java.io.IOException;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+package com.company;
 
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.net.*;
-import java.io.*;
-import javax.swing.*;
-import javax.swing.text.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.text.html.*;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 /* ON VERIFIE SI LES CHAMPS NE SONT PAS VIDE */
   public class TextListener implements DocumentListener{

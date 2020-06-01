@@ -1,13 +1,10 @@
+package com.company;
 
-import java.lang.System;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-import java.awt.Color;
 import java.util.Scanner;
 
 /**
@@ -104,10 +101,6 @@ public class CurabiturServer {
 
             new Thread(new UserHandler(this, newUser)).start();
         }
-
-
-
-
     }
 
 
@@ -140,14 +133,6 @@ public class CurabiturServer {
             userSender.getOutStream().println(userSender.toString() + " -> (<b>no one!</b>): " + msg);
         }
     }
-
-
-
-
-
-
-
-
 
 
     public static void main(String[] args) throws IOException

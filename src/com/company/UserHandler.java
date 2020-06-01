@@ -1,11 +1,8 @@
+package com.company;
 
 import java.lang.System;
-import java.io.IOException;
-import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-import java.awt.Color;
+
 
 public class UserHandler implements Runnable {
 

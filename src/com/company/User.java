@@ -1,4 +1,4 @@
-
+package com.company;
 
 import java.awt.Color;
 import java.io.IOException;
