@@ -8,11 +8,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.Socket;
+import java.net.*;
+import java.io.*;
+import javax.swing.*;
+import javax.swing.text.html.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -174,9 +174,9 @@ public class InterfaceClient extends Thread{
 
 				 "<h4 style=\"color:#178fa5\">Quelques infos utiles :</h4>"
 				+"<ul>"
-				+"<p style=\"color:#178fa5\"; align=\"center\"><b>@nomUtilisateur</b> : cela permet d'envoyer un message à votre correspondant.</p></marquee>"
-				+"<p style=\"color:#8b17a5\"; align=\"center\"><b>:)</b> Des émojis sont pré-existants</p>"
-				+"<p style=\"color:#33a517\"; align=\"center\"><b>la fléche du haut </b> permet de repondre au dernier message.</p>"
+				+"<p style=\"color:#178fa5\"; align=\"center\"><b>@nomUtilisateur</b> : cela permet d'envoyer un messager a votre correcpondant.</p></marquee>"
+				+"<p style=\"color:#8b17a5\"; align=\"center\"><b>:)</b> Des emojis sont pre-existants</p>"
+				+"<p style=\"color:#33a517\"; align=\"center\"><b>la fleche du haut </b> permet de repondre au dernier message.</p>"
 				+"</ul><br/>"
 				+ "");
 
@@ -192,7 +192,7 @@ public class InterfaceClient extends Thread{
 					affichageInformationuTilisateur(blocDiscussion, "<span>Connexion au serveur : " + serverName + " sur le port " + PORT + ".</span>");
 					server = new Socket(serverName, PORT);
 
-					affichageInformationuTilisateur(blocDiscussion, "<span>Vous êtes connectés � " +
+					affichageInformationuTilisateur(blocDiscussion, "<span>Vous etes connectes ! " +
 							server.getRemoteSocketAddress()+"</span>");
 
 					input = new BufferedReader(new InputStreamReader(server.getInputStream()));
@@ -304,7 +304,7 @@ public class InterfaceClient extends Thread{
 	          }
 	        }
 	        catch (IOException ex) {
-	          System.err.println("Impossible danalyser le message entrant");
+	          System.err.println("Impossible d'analyser le message entrant");
 	        }
 	      }
 	    }

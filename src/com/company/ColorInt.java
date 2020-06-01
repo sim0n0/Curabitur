@@ -1,6 +1,4 @@
 package com.company;
-import java.awt.Color;
-
 
 public class ColorInt {
     public static String[] mColors = {
