@@ -20,7 +20,7 @@ public class CurabiturServer {
     private ServerSocket server;
 
     // Utilisateurs du serveur
-    private List<User> clients;
+    private List<Utilisateur> clients;
 
 
     /**
@@ -30,13 +30,13 @@ public class CurabiturServer {
     public CurabiturServer(int port)
     {
         this.port = port;
-        this.clients = new ArrayList<User>();
+        this.clients = new ArrayList<Utilisateur>();
     }
 
     /**
      * Affiche la liste des clients inscrits dans le serveur, si la liste est vide affiche un message
      */
-    public void removeUser(User user)
+    public void removeUser(Utilisateur user)
     {
         this.clients.remove(user);
     }
@@ -45,7 +45,7 @@ public class CurabiturServer {
      * Ajoute un user donné en paramètre de la liste des clients
      * @param user
      */
-    public void addUser(User user)
+    public void addUser(Utilisateur user)
     {
         this.clients.add(user);
     }
@@ -96,7 +96,7 @@ public class CurabiturServer {
             String nickname = (new Scanner ( client.getInputStream() )).nextLine();
 
 //Création et ajout du user depuis client
-            User newUser = new User(client, nickname);
+            Utilisateur newUser = new Utilisateur(client, nickname);
             this.clients.add(newUser);
 
             new Thread(new UserHandler(this, newUser)).start();
@@ -104,8 +104,8 @@ public class CurabiturServer {
     }
 
 
-    public void broadcastMessages(String msg, User userSender) {
-        for (User client : this.clients) {
+    public void broadcastMessages(String msg, Utilisateur userSender) {
+        for (Utilisateur client : this.clients) {
             client.getOutStream().println(
                     userSender.toString() + "<span>: " + msg+"</span>");
         }
@@ -113,15 +113,15 @@ public class CurabiturServer {
 
     // send list of clients to all Users
     public void broadcastAllUsers(){
-        for (User client : this.clients) {
+        for (Utilisateur client : this.clients) {
             client.getOutStream().println(this.clients);
         }
     }
 
     // send message to a User (String)
-    public void sendMessageToUser(String msg, User userSender, String user){
+    public void sendMessageToUser(String msg, Utilisateur userSender, String user){
         boolean find = false;
-        for (User client : this.clients) {
+        for (Utilisateur client : this.clients) {
             if (client.getNickname().equals(user) && client != userSender) {
                 find = true;
                 userSender.getOutStream().println(userSender.toString() + " -> " + client.toString() +": " + msg);
