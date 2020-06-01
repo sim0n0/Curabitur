@@ -16,7 +16,7 @@ public class ColorInt {
             "#4d7358", // green
     };
 
-    public static String getColor(int i) {
+    public static String getCouleur (int i) {
         return mColors[i % mColors.length];
     }
 }
